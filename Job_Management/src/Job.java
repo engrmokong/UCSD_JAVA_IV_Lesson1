@@ -14,6 +14,12 @@ public class Job implements Serializable
 		this.nameOfJob = nameOfJob;
 		}
 	
+	public boolean equals(Job job) 
+	{
+		return (this.salary == job.salary && this.nameOfJob.equals(job.nameOfJob));
+		
+	}
+	
 	public void setSalary(double salary) 
 	{
 		this.salary = salary;
