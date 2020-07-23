@@ -41,7 +41,8 @@ public class AddEmployee extends JFrame {
 	 * Create the frame.
 	 */
 	public AddEmployee() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("ADD NEW EMPLOYEE");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 595, 305);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -78,9 +79,6 @@ public class AddEmployee extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(152)
-							.addComponent(lblNewLabel))
-						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(116)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addComponent(lblEnterEmployeeSurname)
@@ -95,7 +93,10 @@ public class AddEmployee extends JFrame {
 								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 195, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(247)
-							.addComponent(btnSave)))
+							.addComponent(btnSave))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(175)
+							.addComponent(lblNewLabel)))
 					.addContainerGap(107, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
