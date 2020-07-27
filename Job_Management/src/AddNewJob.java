@@ -188,9 +188,15 @@ public class AddNewJob extends JFrame {
 			// writing to the file using for loop
 			for(int i = 0; i < jobs.size(); i++) 
 			{
-				outputFile.writeObject(jobs.get)
+				outputFile.writeObject(jobs.get(i));
+				
 			}
 			
+			//close the file
+			outputFile.close();
+			
+			JOptionPane.showMessageDialog(null, "Successfully saved");
+			this.dispose();
 		}
 		catch(IOException e)
 		{
