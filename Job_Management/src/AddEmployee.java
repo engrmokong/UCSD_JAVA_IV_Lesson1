@@ -99,7 +99,7 @@ public class AddEmployee extends JFrame {
 					//adding on arrayList
 					employees.add(employee);
 					
-					saveEmployeesToFile();
+					saveEmployeesToFile();//
 										
 				}
 				

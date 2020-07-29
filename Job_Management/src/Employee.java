@@ -8,6 +8,8 @@ public class Employee implements Serializable
 	private Job job;  //this is from Job class
 	private int staffNr;
 	
+	private static final long serialVersionUID = 478921440099314794L;
+	
 	//creating a constructor
 	public Employee(String name, String surname, Job job, int staffNr)
 	{
@@ -47,7 +49,7 @@ public class Employee implements Serializable
 		return job;
 	}
 	
-	public void setName(int staffNr)
+	public void setStaffNr(int staffNr)
 	{
 		this.staffNr = staffNr;
 	}
@@ -56,5 +58,7 @@ public class Employee implements Serializable
 	{
 		return staffNr;
 	}
+
+	
 
 }
