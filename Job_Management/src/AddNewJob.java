@@ -71,10 +71,11 @@ public class AddNewJob extends JFrame {
 		jobSalary = new JTextField();
 		jobSalary.setColumns(10);
 		
+		// Save button
 		JButton btnNewButton = new JButton("SAVE");
 		btnNewButton.addActionListener(new ActionListener() {
 		
-			//Event handler for save button
+		//Event handler for save button
 		public void actionPerformed(ActionEvent e) {
 		
 			if(jobName.getText().isEmpty()  || jobSalary.getText().isEmpty())
@@ -90,6 +91,8 @@ public class AddNewJob extends JFrame {
 				Job job = new Job(Double.parseDouble(salary), name); // parseDouble converts string salary to double
 				
 				jobs.add(job);
+				
+				saveJobsToFile();
 				
 			}
 			
@@ -135,7 +138,7 @@ public class AddNewJob extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 		
-		//creating an instance for the ArrayList
+				//creating an instance for the ArrayList
 				jobs = new ArrayList<Job>();
 				populateArrayList();
 	}

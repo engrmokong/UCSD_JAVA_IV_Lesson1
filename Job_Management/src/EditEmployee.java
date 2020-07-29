@@ -1,18 +1,15 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
+
 import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.util.*;
+import java.io.*;
+import java.text.*;
 
 public class EditEmployee extends JFrame {
 
@@ -20,6 +17,11 @@ public class EditEmployee extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	
+	ArrayList<Job> jobs;
+	ArrayList<Employee> employees;
+	DecimalFormat formatter;
+	
 
 	/**
 	 * Launch the application.
@@ -140,6 +142,83 @@ public class EditEmployee extends JFrame {
 					.addContainerGap(35, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		//initiating the arrayList for Jobs and employees
+				formatter = new DecimalFormat("#,###.00");
+				
+				jobs = new ArrayList<Job>();
+				employees = new ArrayList <Employee>();
+				
+				populateArrayList();
+		
+	}
+	
+	private void populateArrayList() {
+		// TODO Auto-generated method stub
+		try
+		{
+			FileInputStream file = new FileInputStream("Jobs.dat"); // makes connection from the file
+			ObjectInputStream inputFile = new ObjectInputStream(file); // reads from the file
+			
+			//to check if its the end of the file
+			boolean endOfFile = false;
+			
+			// if its not the end of the file, it will keep extracting data
+			while(!endOfFile)
+			{
+				try
+				{
+					jobs.add((Job) inputFile.readObject());
+				}
+				catch (EOFException e)
+				{
+					endOfFile = true;
+				}
+				catch (Exception f)
+				{
+					JOptionPane.showMessageDialog(null, f.getMessage());
+				}
+				
+			}
+			inputFile.close();
+		}
+		catch (IOException e)
+		{
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
+		
+		try
+		{
+			FileInputStream file2 = new FileInputStream("Employees.dat"); // makes connection from the file
+			ObjectInputStream inputFile2 = new ObjectInputStream(file2); // reads from the file
+			
+			//to check if its the end of the file
+			boolean endOfFile = false;
+			
+			// if its not the end of the file, it will keep extracting data
+			while(!endOfFile)
+			{
+				try
+				{
+					employees.add((Employee) inputFile2.readObject());
+				}
+				catch (EOFException e)
+				{
+					endOfFile = true;
+				}
+				catch (Exception f)
+				{
+					JOptionPane.showMessageDialog(null, f.getMessage());
+				}
+				
+			}
+			inputFile2.close();
+		}
+		catch (IOException e)
+		{
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
+		
 	}
 
 }

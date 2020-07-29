@@ -65,10 +65,9 @@ public class Menu extends JFrame {
 		JMenuItem mntmNewMenuItem = new JMenuItem("ADD NEW EMPLOYEE");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 		
-		public void actionPerformed(ActionEvent e) {
-			
-			new AddEmployee().setVisible(true);
-			
+		
+			public void actionPerformed(ActionEvent e) {
+				new AddEmployee().setVisible(true);
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem);
