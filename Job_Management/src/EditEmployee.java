@@ -149,7 +149,7 @@ public class EditEmployee extends JFrame {
 				jobs = new ArrayList<Job>();
 				employees = new ArrayList <Employee>();
 				
-				populateArrayList();
+				populateArrayList();//
 		
 	}
 	
